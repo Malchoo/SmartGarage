@@ -1,0 +1,29 @@
+﻿@using SmartGarage.Models
+@model CurrencyApiResponse
+
+<h2>Exchange Rates</h2>
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rate in Model.Rates)
+            {
+                <tr>
+                    <td>@rate.Key</td>
+                    <td>@rate.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No data available.</p>
+}

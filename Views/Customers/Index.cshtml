@@ -1,0 +1,31 @@
+﻿<form asp-action="Index" method="get">
+    <div class="form-group">
+        <label for="searchString">Search:</label>
+        <input type="text" name="searchString" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Name</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["EmailSortParm"]">Email</a>
+            </th>
+            <!-- Add more table headers -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Username</td>
+                <td>@customer.Email</td>
+                <!-- Add more customer details -->
+            </tr>
+        }
+    </tbody>
+</table>
