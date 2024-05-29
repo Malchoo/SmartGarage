@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartGarage.Models;
+
 public class Customer
 {
     [Key, ForeignKey("User")]
